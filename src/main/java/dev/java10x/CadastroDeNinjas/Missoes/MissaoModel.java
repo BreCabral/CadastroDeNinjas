@@ -22,7 +22,7 @@ public class MissaoModel {
     private String nome;
     private String dificuldade;
 
-    @OneToMany(mappedBy = "missoes")
+    @OneToMany(mappedBy = "missao")
     private List<NinjaModel> ninjas;
 
 }
