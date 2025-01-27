@@ -3,6 +3,7 @@ package dev.java10x.CadastroDeNinjas.Ninjas;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("ninja")
@@ -24,9 +25,9 @@ public class NinjaController {
         return ninjaService.listNinjas();
     }
 
-    @GetMapping("find/id")
-    public String findNinjaById() {
-        return "Ninja Find";
+    @GetMapping("find/{id}")
+    public Optional<NinjaModel> findNinjaById(@PathVariable Long id) {
+        return ninjaService.getNinjaById(id);
     }
 
     @PostMapping("add")
